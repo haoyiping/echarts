@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- xmlns:默认命名空间
+
+     xmlns:xs:当前的文档的标记来自http://www.w3.org/2001/XMLSchema命名空间 前缀:xs
+     elementFormDefault：当前文档使用的标记必须是使用http://www.w3.org/2001/XMLSchema命名空间的
+     targetNamespace:目标文档使用的命名空间
+     根节点: xs:schema   也必须这样，否则就不是XML SChema模式
+      -->
+<xs:schema xmlns="http://www.w3school.com.cn" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
+   targetNamespace="http://www.w3school.com.cn">
+
+  <!--创建根节点  bookinfo -->
+  <xs:element name="bookinfo">
+
+    <xs:complexType>
+      <!--复合类型  minOccurs:最小出现次数  maxOccurs：最大出现次数
+      unbounded :无穷大-->
+      <xs:sequence>
+
+        <xs:element ref="book" minOccurs="1" maxOccurs="unbounded" />
+
+      </xs:sequence>
+
+    </xs:complexType>
+  </xs:element>
+
+ 
+
+  <!--复合元素：有属性也 有子标签-->
+  <xs:element name="book" >
+
+    <xs:complexType>
+      <!--xs:all 标记出现的顺序 任意出现   xs:sequence：按前后出现顺序-->
+
+      <!--调用元素组-->
+      <xs:group  ref="elementinfo" />
+
+      <!--定义属性   fixed:指定值   default：     use="required":必须出现-->
+      <xs:attribute name="id" use="required"  type="xs:string"/>
+
+      <!-- 调用属性组-->
+      <xs:attributeGroup ref="attr" />
+
+
+    </xs:complexType>
+
+
+  </xs:element>
+
+
+  <!-- 属性组   :管理一组属性-->
+  <xs:attributeGroup name="attr">
+    <xs:attribute name="tilte"   type="xs:string"/>
+    <xs:attribute name="description"  type="xs:string"/>
+
+  </xs:attributeGroup>
+
+  <!--元素组  管理一组元素element -->
+  <xs:group name="elementinfo">
+
+    <xs:all>
+
+      <xs:element ref="bookname" />
+      <xs:element ref="author" />
+      <xs:element ref="price" />
+      <xs:element ref="age" />
+      <xs:element ref="type" />
+
+
+    </xs:all>
+  </xs:group>
+
+  <!-- 简单元素：只有标签内容，没有属性也没有子标签   simpleType
+element:标签   name:名字  type:数据类型ref:引用定义好的标记
+-->
+  <!-- bookname-->
+  <xs:element name="bookname" type="xs:string"></xs:element>
+
+  <!--author -->
+  <xs:element name="author" type="xs:string"></xs:element>
+
+  <!-- price-->
+  <xs:element name="price" >
+    <xs:simpleType >
+      <!-- 简单元素-->
+      <xs:restriction base="xs:decimal">
+        <xs:fractionDigits value="2" />
+        <!-- 小数点位数-->
+
+      </xs:restriction>
+    </xs:simpleType>
+
+  </xs:element>
+
+  <!-- age-->
+  <xs:element name="age" >
+    <xs:simpleType >
+      <!-- 简单元素-->
+      <xs:restriction base="xs:int">
+        <xs:minInclusive value="18" />
+        <xs:maxInclusive value="30" />
+      </xs:restriction>
+    </xs:simpleType>
+
+  </xs:element>
+
+  <!-- type      元素中如果加约束，通过ximpleType，然后数据类型通过  restriction 中的base指定-->
+  <xs:element name="type">
+    <xs:simpleType >
+      <!-- 简单元素-->
+      <xs:restriction base="xs:string">
+        <xs:enumeration value="喜剧" />
+        <xs:enumeration value="悲剧" />
+
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+
+ 
+
+</xs:schema>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- <object xmlns="http://www.w3school.com.cn" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xsi:schemaLocation="http://hao.bit.edu book.xsd"> -->
+<amf xmlns="http://hao.bit.com.cn" xmlns:xsi="http://hao.bit.edu.cn/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="amf.xsd">
+    <object id="1">
+    	<mesh>
+    		<vertices>
+    			<vertex>
+    				<coordinates>
+    					<x>0</x>
+    					<y>0</y>
+    					<z>0</z>
+    				</coordinates>
+    				
+    			</vertex>
+    			<vertex>
+    				<coordinates>
+    					<x>-1</x>
+    					<y>0</y>
+    					<z>0</z>
+    				</coordinates>
+    			</vertex>
+    			<vertex>
+    				<coordinates>
+    					<x>0</x>
+    					<y>-1</y>
+    					<z>0</z>
+    				</coordinates>
+    			</vertex>
+    			<vertex>
+    				<coordinates>
+    					<x>0</x>
+    					<y>0</y>
+    					<z>-1</z>
+    				</coordinates>
+    			</vertex>
+    		</vertices>
+    		<volume>
+    			<triangle>
+    				<v1>0</v1>
+    				<v2>2</v2>
+    				<v3>1</v3>
+    			</triangle>
+    			<triangle>
+    				<v1>0</v1>
+    				<v2>1</v2>
+    				<v3>3</v3>
+    			</triangle>
+    			<triangle>
+    				<v1>0</v1>
+    				<v2>3</v2>
+    				<v3>2</v3>
+    			</triangle>
+    			<triangle>
+    				<v1>1</v1>
+    				<v2>2</v2>
+    				<v3>3</v3>
+    			</triangle>
+    			<color>
+    				<r>0.5</r>
+    				<g>0</g>
+    				<b>0.5</b>
+    				<a>0.5</a>
+    			</color>
+    			<metadata type="aaa"></metadata>
+    		</volume>
+    	</mesh>
+    	
+   	</object>
+   	<material id="2"></material>
+   	
+ </amf>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="gb2312"?>
+ 
+ <!-- 
+  xmlns:默认命名空间     xmlns:xsi:
+   xsi:schemaLocation：导入xsd文档
+ 
+ -->
+<bookinfo xmlns="http://www.w3school.com.cn" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xsi:schemaLocation="http://www.w3school.com.cn book.xsd">
+     
+  <book id="101">
+     
+   <bookname>java编程思想</bookname> 
+   <author>张三</author>
+    <price>89.5</price>
+    <age>18</age>
+    <type>喜剧</type>  
+  </book> 
+  
+   <book id="102">
+     
+   <bookname>7天精通炒股</bookname> 
+   <author>周星星</author>
+    <price>189.5</price>
+    <age>18</age>
+    <type>悲剧</type>  
+  </book> 
+  
+</bookinfo>
